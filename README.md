@@ -4,10 +4,10 @@
 A startup called Sparkify wants to analyze the data they've been collecting on songs and user activity on their new music streaming app. The analytics team is particularly interested in understanding what songs users are listening to. Currently, they don't have an easy way to query their data, which resides in a directory of JSON logs on user activity on the app, as well as a directory with JSON metadata on the songs in their app.
 
 They'd like a data engineer to create a Postgres database with tables designed to optimize queries on song play analysis, and bring you on the project. Your role is to create a database schema and ETL pipeline for this analysis. You'll be able to test your database and ETL pipeline by running queries given to you by the analytics team from Sparkify and compare your results with their expected results.
-# Overview 
-In this project we will be using unstructured data events from online song stream service and converting into structured Relational data model. The idea is to build a releation data model where the user should be able to request for data combining different combination. 
-## Purpose 
-The purpose of the project is to execute ad hoc queries as requiered for analytics purpose like, How long user is active in the streaming service. Which song is repeatedly listened. 
+# Overview
+In this project we will be using unstructured data events from online song stream service and converting into structured Relational data model. The idea is to build a releation data model where the user should be able to request for data combining different combination.
+## Purpose
+The purpose of the project is to execute ad hoc queries as requiered for analytics purpose like, How long user is active in the streaming service. Which song is repeatedly listened.
 ## Data Set
 ### Song Dataset
 The first dataset is a subset of real data from the [Million Song Dataset](https://labrosa.ee.columbia.edu/millionsong/). Each file is in JSON format and contains metadata about a song and the artist of that song. The files are partitioned by the first three letters of each song's track ID. For example, here are filepaths to two files in this dataset.
@@ -22,19 +22,19 @@ log_data/2018/11/2018-11-13-events.json
 # Solution
 ## Prerequisites
 - Python3 and its basic related libraries like pandas.
-- PosgresSQL database 
+- PosgresSQL database
 
 ## Schema Design (Star Schema)
-Analysing the dataset, here we have to convert the log event to a normalized data model. The model should be just basic formulaic style with facts and dimension table which is Star Schema. 
+Analysing the dataset, here we have to convert the log event to a normalized data model. The model should be just basic formulaic style with facts and dimension table which is Star Schema.
 Shema :
-![](https://github.com/vinayms/data-modeling-with-postgres/images/star_schema.png)
+![](https://github.com/vinayms/data-modeling-with-postgres/blob/main/images/star_schema.png)
 
 ### Solution Scripts and Data
 #### /data
-This folder consist of all the song stream events and song libray. Log Dataset and Song Dataset. 
+This folder consist of all the song stream events and song libray. Log Dataset and Song Dataset.
 
 #### slq_queries.py
-The defined SQL statments of DDL and DML. 
+The defined SQL statments of DDL and DML.
 #### ETL Process
 Notebook etl.ipynb to explore the data set and implement the logic for required transformation (REPL).
 The etl.py script is the complete code read event and construct the star schema data model and load the event data.
