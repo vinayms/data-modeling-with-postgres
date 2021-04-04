@@ -38,3 +38,8 @@ The defined SQL statments of DDL and DML.
 #### ETL Process
 Notebook etl.ipynb to explore the data set and implement the logic for required transformation (REPL).
 The etl.py script is the complete code read event and construct the star schema data model and load the event data.
+
+### References
+![]https://dbdiagram.io/ - Database model diagram
+![]https://www.educative.io/edpresso/star-schema-vs-snowflake-schema
+![]https://en.wikipedia.org/wiki/Star_schema
