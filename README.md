@@ -33,10 +33,12 @@ log_data/2018/11/2018-11-13-events.json
 
 ## Schema Design (Star Schema)
 Analysing the dataset, here we have to convert the log event to a normalised data model. The model should be just basic formulaic style with facts and dimension table which is Star Schema.
-####Fact Table
+
+#### Fact Table
     songplays - records in log data associated with song plays i.e. records with page NextSong
       - songplay_id, start_time, user_id, level, song_id, artist_id, session_id, location, user_agent
-####Dimension Tables
+
+#### Dimension Tables
     users - users in the app
       - user_id, first_name, last_name, gender, level
     songs - songs in music database
@@ -46,7 +48,7 @@ Analysing the dataset, here we have to convert the log event to a normalised dat
     time - timestamps of records in songplays broken down into specific units
       - start_time, hour, day, week, month, year, weekday
 
-Shema diagram:
+#### Schema diagram:
 ![](https://github.com/vinayms/data-modeling-with-postgres/blob/main/images/star_schema.png)
 
 ### Project Repository Files
