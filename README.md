@@ -24,9 +24,29 @@ log_data/2018/11/2018-11-13-events.json
 - Python3 and its basic related libraries like pandas.
 - PosgresSQL database
 
+## ETL Process
+  We are given event stream of data when user plays a record using NextSong and a dataset of song details. Since writing ad hoc queries to extract specific information like aggregate and how many times the song is played.. is difficult on the unstructured data. In the ETL process described in the following steps shows how we creates facts and dimension tables using the unstructured data which will be used for ad hoc queries.
+  - By observing the data we can clearly see the changing data i.e each play could be stored as Facts.
+  - And other data like song, artist,  time, user details could be saved as Dimension table. Although, user data might change but it is not as frequent as compared to other event.
+  - After identifying what data we are going to extract we use pandas DataFrame to extract the data from the json.
+  - We transform the data as required for our tables and store the data in the tables.
+
 ## Schema Design (Star Schema)
 Analysing the dataset, here we have to convert the log event to a normalised data model. The model should be just basic formulaic style with facts and dimension table which is Star Schema.
-Shema :
+####Fact Table
+    songplays - records in log data associated with song plays i.e. records with page NextSong
+      - songplay_id, start_time, user_id, level, song_id, artist_id, session_id, location, user_agent
+####Dimension Tables
+    users - users in the app
+      - user_id, first_name, last_name, gender, level
+    songs - songs in music database
+      - song_id, title, artist_id, year, duration
+    artists - artists in music database
+      - artist_id, name, location, latitude, longitude
+    time - timestamps of records in songplays broken down into specific units
+      - start_time, hour, day, week, month, year, weekday
+
+Shema diagram:
 ![](https://github.com/vinayms/data-modeling-with-postgres/blob/main/images/star_schema.png)
 
 ### Project Repository Files
