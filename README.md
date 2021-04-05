@@ -25,21 +25,26 @@ log_data/2018/11/2018-11-13-events.json
 - PosgresSQL database
 
 ## Schema Design (Star Schema)
-Analysing the dataset, here we have to convert the log event to a normalized data model. The model should be just basic formulaic style with facts and dimension table which is Star Schema.
+Analysing the dataset, here we have to convert the log event to a normalised data model. The model should be just basic formulaic style with facts and dimension table which is Star Schema.
 Shema :
 ![](https://github.com/vinayms/data-modeling-with-postgres/blob/main/images/star_schema.png)
 
-### Solution Scripts and Data
+### Project Repository Files
 #### /data
 This folder consist of all the song stream events and song libray. Log Dataset and Song Dataset.
 
 #### slq_queries.py
 The defined SQL statments of DDL and DML.
-#### ETL Process
+#### etl.ipynb
 Notebook etl.ipynb to explore the data set and implement the logic for required transformation (REPL).
-The etl.py script is the complete code read event and construct the star schema data model and load the event data.
+#### etl.py
+The etl.py script is the complete code to read event and construct the star schema data model and load the event data.
 
+### How to Run the project
+- Run create_tables.py to create your database and tables.
+- Run etl.py to transform and load the data to data store.
+- Run test.ipynb to confirm the creation of your tables with the correct columns. Make sure to click "Restart kernel" to close the connection to the database after running this notebook.
 ### References
-https://dbdiagram.io/ - Database model diagram
-https://www.educative.io/edpresso/star-schema-vs-snowflake-schema
-https://en.wikipedia.org/wiki/Star_schema
+- https://dbdiagram.io/ - Database model diagram
+- https://www.educative.io/edpresso/star-schema-vs-snowflake-schema
+- https://en.wikipedia.org/wiki/Star_schema
